@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.go text eol=lf
+*.md text eol=lf
+*.ps1 text eol=lf
+*.json text eol=lf
+*.epf binary
+# Fixture/provenance hashes bind exact bytes, including original line endings.
+go-onec/testdata/** -text -whitespace
+# Retain upstream license texts exactly as distributed.
+licenses/** -text -whitespace

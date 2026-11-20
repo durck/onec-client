@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+  <ExternalDataProcessor uuid="800d8fe8-86ab-4d3a-9d03-d564dc26d419">
+    <InternalInfo>
+      <xr:ContainedObject><xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId><xr:ObjectId>8e9d3884-1012-47a5-86dd-9809a792e8e8</xr:ObjectId></xr:ContainedObject>
+      <xr:GeneratedType name="ExternalDataProcessorObject.NativeInteractiveProbe" category="Object"><xr:TypeId>f39fb7d4-f765-4600-b3af-24abcaccc891</xr:TypeId><xr:ValueId>e7beb0d6-3c3f-4c4c-96af-339b23c3d231</xr:ValueId></xr:GeneratedType>
+    </InternalInfo>
+    <Properties><Name>NativeInteractiveProbe</Name><Synonym/><Comment>Benign native protocol laboratory fixture.</Comment><DefaultForm>ExternalDataProcessor.NativeInteractiveProbe.Form.ProbeForm</DefaultForm><AuxiliaryForm/></Properties>
+    <ChildObjects><Form>ProbeForm</Form></ChildObjects>
+  </ExternalDataProcessor>
+</MetaDataObject>

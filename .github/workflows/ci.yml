@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test and build (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go-onec/go.mod
+          cache-dependency-path: go-onec/go.sum
+      - name: Check repository, test, vet and build (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./tools/Test-Project.ps1
+      - name: Check repository, test, vet and build (Linux)
+        if: runner.os == 'Linux'
+        run: sh tools/test.sh
+      - name: Verify module checksums
+        working-directory: go-onec
+        run: go mod verify
+      - name: Race detector
+        if: runner.os == 'Linux'
+        working-directory: go-onec
+        run: go test -race ./...

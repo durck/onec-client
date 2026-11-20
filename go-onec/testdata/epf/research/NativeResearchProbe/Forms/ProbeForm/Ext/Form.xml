@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.10">
+  <Title><v8:item><v8:lang>ru</v8:lang><v8:content>Interactive protocol probe</v8:content></v8:item></Title>
+  <AutoCommandBar name="FormCommandBar" id="-1"/>
+  <Events><Event name="OnCreateAtServer">OnCreateAtServer</Event></Events>
+  <ChildItems>
+    <LabelDecoration name="ProbeHeading" id="10"><Title><v8:item><v8:lang>ru</v8:lang><v8:content>Context synchronization control</v8:content></v8:item></Title></LabelDecoration>
+    <InputField name="InputTextField" id="11"><DataPath>InputText</DataPath><Title><v8:item><v8:lang>ru</v8:lang><v8:content>Text</v8:content></v8:item></Title><ContextMenu name="InputTextMenu" id="12"/><ExtendedTooltip name="InputTextTip" id="13"/></InputField>
+    <InputField name="ResultField" id="14"><DataPath>ResultText</DataPath><ReadOnly>true</ReadOnly><Title><v8:item><v8:lang>ru</v8:lang><v8:content>Server result</v8:content></v8:item></Title><ContextMenu name="ResultMenu" id="15"/><ExtendedTooltip name="ResultTip" id="16"/></InputField>
+    <InputField name="CounterField" id="17"><DataPath>CounterText</DataPath><ReadOnly>true</ReadOnly><Title><v8:item><v8:lang>ru</v8:lang><v8:content>Completed calls</v8:content></v8:item></Title><ContextMenu name="CounterMenu" id="18"/><ExtendedTooltip name="CounterTip" id="19"/></InputField>
+    <Button name="ClientButton" id="20"><Type>UsualButton</Type><CommandName>Form.Command.ClientAction</CommandName><ExtendedTooltip name="ClientButtonTip" id="21"/></Button>
+      <InputField name="QuantityField" id="22"><DataPath>Quantity</DataPath><ContextMenu name="QuantityMenu" id="23"/><ExtendedTooltip name="QuantityTip" id="24"/></InputField>
+    <CheckBoxField name="EnabledField" id="25"><DataPath>EnabledFlag</DataPath><ContextMenu name="EnabledMenu" id="26"/><ExtendedTooltip name="EnabledTip" id="27"/></CheckBoxField>
+    <InputField name="DateField" id="28"><DataPath>EventDate</DataPath><ContextMenu name="DateMenu" id="29"/><ExtendedTooltip name="DateTip" id="30"/></InputField>
+  </ChildItems>
+  <Attributes>
+    <Attribute name="Object" id="1"><Type><v8:Type>cfg:ExternalDataProcessorObject.NativeResearchProbe</v8:Type></Type><MainAttribute>true</MainAttribute></Attribute>
+    <Attribute name="InputText" id="2"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>100</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
+    <Attribute name="ResultText" id="3"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>200</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
+    <Attribute name="CounterText" id="4"><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>20</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Attribute>
+      <Attribute name="Quantity" id="5"><Type><v8:Type>xs:decimal</v8:Type><v8:NumberQualifiers><v8:Digits>15</v8:Digits><v8:FractionDigits>3</v8:FractionDigits><v8:AllowedSign>Any</v8:AllowedSign></v8:NumberQualifiers></Type></Attribute>
+    <Attribute name="EnabledFlag" id="6"><Type><v8:Type>xs:boolean</v8:Type></Type></Attribute>
+    <Attribute name="EventDate" id="7"><Type><v8:Type>xs:dateTime</v8:Type><v8:DateQualifiers><v8:DateFractions>DateTime</v8:DateFractions></v8:DateQualifiers></Type></Attribute>
+  </Attributes>
+  <Commands><Command name="ClientAction" id="1"><Title><v8:item><v8:lang>ru</v8:lang><v8:content>Process using stock client handler</v8:content></v8:item></Title><Action>ClientAction</Action></Command></Commands>
+</Form>

@@ -1,0 +1,20 @@
+{
+  "title": "Synthetic lifecycle example",
+  "event": [
+    {
+      "id": "3CCC650E-F631-4CAE-8E33-3EAAC610B5F9",
+      "handlers": [
+        {"handler": [{"handlerName": "BaseOpen", "callType": "Before"}]},
+        {"handler": [
+          {"handlerName": "CheckOpen", "callType": "Before"},
+          {"handlerName": "ExtensionOpen", "callType": "Override"},
+          {"handlerName": "AfterOpen", "callType": "After"}
+        ]}
+      ]
+    },
+    {
+      "id": "52DBB775-1631-4FD5-8C55-1615B5881DAC",
+      "handlers": [{"handler": [{"handlerName": "CheckClose", "callType": "Before"}]}]
+    }
+  ]
+}
